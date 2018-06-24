@@ -179,7 +179,9 @@ I implemented this step in lines #634 through #675 in my code in `CameraCalibrat
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
-Here's a [video1] [link to my video result](./output_video/project_video_out/project_video_out.mp4)
+Here's the result video:
+
+[![Output Result Video](http://img.youtube.com/vi/4Re9SafpK1E/0.jpg)](http://www.youtube.com/watch?v=4Re9SafpK1E "Video Output")
 
 ---
 
