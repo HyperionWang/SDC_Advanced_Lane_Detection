@@ -129,9 +129,13 @@ Also, I would check if the detected right/left centers makes any sense.
 2. Also, if the center changes more than 1.5 times of sliding window's width, I would just ignore the change of the lane centers. 
 
 The following are results of the lane detection on straight lane and curved lane
+
 Straigth Lane
+
 ![alt text][image9]
+
 Curved Lane
+
 ![alt text][image10]
 
 #### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
@@ -172,5 +176,5 @@ Here's a [video1] [link to my video result](./output_video/project_video_out/pro
 1. The first step of the project is well defined camera calibration and undistortion. Once the calibration image are in good quality and undistorttion transformation matrix is well defined. We shouldn't see issues in this step. 
 2. The perspective transformation is also straight forward, as long as the camera's position is not moving, or the angle of the camera is not tilting during the driving, the perspetive transformation should be the same. 
 3. The critical steps in this project are: Lane detection by the thresholding in different domains, such as color domain, shape domain, and other possible features, like the lane to lane distance, curvature range, and so on. The land detection proecess need really tough robustness testing since the road conditions change a lot. On the other side, as we consider more and more situation for the lane detection, the complexity of the program would increase exponentially. The approach I used in this project are based on the thresholding on color, s-channel, gradient, and direction for the lane detection. It provided reasonable well detection on the regular road condition. But I still have issue on the chanllenge videos. I will look into the reasons for the issue.
- 4. For the lane center detections, the starting point location is very critical, and it will be tricky on the dashed lane, since there is no binary pixels for the lane center detections. Therefore, both lanes need to be reference to each other. And if the detection is not trustable (convolution value is lower than 500 in my code), it is better to use the previously detected center than use the unreliable center detections.
- 5. In order to make the lane detection more robust, I need to look into the failure modes of the chanllnge video causeing the failure on the lane detections and lane center calcualtion. I believe by add more features in the lane finding, as well as adding the flexbility of the lane's width adjustment, would be able to make the chanllenge video work. 
+4. For the lane center detections, the starting point location is very critical, and it will be tricky on the dashed lane, since there is no binary pixels for the lane center detections. Therefore, both lanes need to be reference to each other. And if the detection is not trustable (convolution value is lower than 500 in my code), it is better to use the previously detected center than use the unreliable center detections.
+5. In order to make the lane detection more robust, I need to look into the failure modes of the chanllnge video causeing the failure on the lane detections and lane center calcualtion. I believe by add more features in the lane finding, as well as adding the flexbility of the lane's width adjustment, would be able to make the chanllenge video work.
