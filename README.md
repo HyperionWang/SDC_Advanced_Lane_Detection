@@ -29,7 +29,7 @@ The goals / steps of this project are the following:
 [image8]: ./output_images/straight_lines1_warp.jpg "After Perspetive Transformation"
 [image9]: ./output_images/straight_lines1_lane_find.jpg "Straight Lane Detection"
 [image10]: ./output_images/test6_lane_find.jpg "Straight Lane Detection"
-[image11]: ./output_images/ScreenShot_OutputVideo.png "Straight Lane Detection"
+[image11]: ./output_images/ScreenShot_OutputVideo.PNG "Straight Lane Detection"
 
 
 [video1]: ./output_video/project_video_out/project_video_out.mp4 "Video"
