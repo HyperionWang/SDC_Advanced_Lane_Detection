@@ -56,9 +56,13 @@ First, I start by preparing "object points", which will be the (x, y, z) coordin
 The calibration images I used are in the folder camera_cal. And the function I used to calibrate the camera are cv2.findChessboardCorners(). The grid size of the chessboard are nx = 9 and ny = 5 
 
 I then used the output `objpoints` and `imgpoints` to compute the camera calibration and distortion coefficients using the `cv2.calibrateCamera()` function.  I applied this distortion correction to the test image using the `cv2.undistort()` function and obtained this result: 
+
 Distorted Image
-![alt text][image1] 
+
+![alt text][image1]
+
 Corrected Undistorted Image
+
 ![alt text][image2]
 
 
@@ -70,10 +74,14 @@ To demonstrate this step, I will describe how I apply the distortion correction 
 
 The following are the original and corrected undistorted straight line images. As seen in the iamges, the distorted corner parts of the original image have been corrected in the undistorted image. And therefore, the image is ready for the following lane extraction and perspective transformation.
 
+
 Original Image:
+
 ![alt text][image3]
+
 Corrected Undistorted Image:
-![alt text][image4]  
+
+![alt text][image4]
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
@@ -82,11 +90,13 @@ I used a combination of color, gradient magnitude, and gradient direction thresh
 First, based on the experience in the first project, I got that it is useful to apply the color filter to select the white and yellow color from the image in HLS color domain. The white and yellow filter is from #137 to #151 in the function select_white_yellow() function.
 
 After that, I applied the threshold on the S-channel in the image, combined with gradient and direction threshold. The following image shows the filtered image in those three channels.
+
 ![alt text][image5]
 
 As seen in the image, the red channel (color filter channel) picking out the lane through the color filter and threshold. The Green and Blue channels (gradient and direction channels) pick out the shape of the lane. 
 
 The following is the binary output of the lane detection image:
+
 ![alt text][image6]
 
 #### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
@@ -110,9 +120,13 @@ This resulted in the following source and destination points:
 | 705, 460      | 950, 0        |
 
 I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
+
 Before Perspective Transformation
+
 ![alt text][image7]
+
 After Perspective Transformation
+
 ![alt text][image8]
 
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
